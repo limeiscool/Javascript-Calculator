@@ -22,7 +22,8 @@ function reducer(state, { type, pack }) {
           overwrite: false,
         };
       }
-      if (state.current === "-" && pack.num === ".") return state;
+      if ((state.current === "-" && pack.num === ".") || pack.num === "0")
+        return state;
       if (pack.num === "0" && state.current === "0") return state;
       if (pack.num === "0" && state.current == null) return state;
       if (pack.num === "." && state.current == null)
